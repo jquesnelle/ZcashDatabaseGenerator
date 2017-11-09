@@ -13,14 +13,16 @@ namespace BitcoinDatabaseGenerator
         private long currentTransactionId;
         private long currentTransactionInputId;
         private long currentTransactionOutputId;
+        private long currentJoinSplitId;
 
-        public DatabaseIdManager(int blockFileId, long blockId, long bitcoinTransactionId, long transactionInputId, long transactionOutputId)
+        public DatabaseIdManager(int blockFileId, long blockId, long bitcoinTransactionId, long transactionInputId, long transactionOutputId, long joinSplitId)
         {
             this.currentBlockchainFileId = blockFileId;
             this.currentBlockId = blockId;
             this.currentTransactionId = bitcoinTransactionId;
             this.currentTransactionInputId = transactionInputId;
             this.currentTransactionOutputId = transactionOutputId;
+            this.currentJoinSplitId = joinSplitId;
         }
 
         public int GetNextBlockchainFileId(int increment)
@@ -55,6 +57,13 @@ namespace BitcoinDatabaseGenerator
         {
             long result = this.currentTransactionOutputId;
             this.currentTransactionOutputId += increment;
+            return result;
+        }
+
+        public long GetNextJoinSplitId(long increment)
+        {
+            long result = this.currentJoinSplitId;
+            this.currentJoinSplitId += increment;
             return result;
         }
     }

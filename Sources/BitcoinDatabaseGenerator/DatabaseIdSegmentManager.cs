@@ -16,28 +16,33 @@ namespace BitcoinDatabaseGenerator
         private readonly long lastTransactionId;
         private readonly long lastTransactionInputId;
         private readonly long lastTransactionOutputId;
+        private readonly long lastJoinSplitId;
 
         private long currentBlockId;
         private long currentTransactionId;
         private long currentTransactionInputId;
         private long currentTransactionOutputId;
+        private long currentJoinSplitId;
 
         public DatabaseIdSegmentManager(
             DatabaseIdManager databaseIdManager,
             long blockCount,
             long bitcoinTransactionCount,
             long transactionInputCount,
-            long transactionOutputCount)
+            long transactionOutputCount,
+            long joinSplitCount)
         {
             this.currentBlockId = databaseIdManager.GetNextBlockId(blockCount);
             this.currentTransactionId = databaseIdManager.GetNextTransactionId(bitcoinTransactionCount);
             this.currentTransactionInputId = databaseIdManager.GetNextTransactionInputId(transactionInputCount);
             this.currentTransactionOutputId = databaseIdManager.GetNextTransactionOutputId(transactionOutputCount);
+            this.currentJoinSplitId = databaseIdManager.GetNextJoinSplitId(joinSplitCount);
 
             this.lastBlockId = this.currentBlockId + blockCount - 1;
             this.lastTransactionId = this.currentTransactionId + bitcoinTransactionCount - 1;
             this.lastTransactionInputId = this.currentTransactionInputId + transactionInputCount - 1;
             this.lastTransactionOutputId = this.currentTransactionOutputId + transactionOutputCount - 1;
+            this.lastJoinSplitId = this.currentJoinSplitId + joinSplitCount - 1;
 
             this.initialTransactionId = this.currentTransactionId;
         }
@@ -80,6 +85,16 @@ namespace BitcoinDatabaseGenerator
             }
 
             return this.currentTransactionOutputId++;
+        }
+
+        public long GetNextJoinSplitId()
+        {
+            if (this.currentJoinSplitId > this.lastJoinSplitId)
+            {
+                throw new InvalidOperationException("This method was invoked too many times");
+            }
+
+            return this.currentJoinSplitId++;
         }
 
         public void ResetNextTransactionId()

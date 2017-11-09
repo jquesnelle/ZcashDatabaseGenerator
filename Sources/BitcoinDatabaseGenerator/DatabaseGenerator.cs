@@ -13,12 +13,12 @@ namespace BitcoinDatabaseGenerator
     using System.Globalization;
     using System.Linq;
     using System.Threading.Tasks;
-    using BitcoinBlockchain.Parser;
+    using ZcashBlockchain.Parser;
     using BitcoinDataLayerAdoNet;
     using BitcoinDataLayerAdoNet.DataSets;
     using ZeroHelpers;
     using DBData = BitcoinDataLayerAdoNet.Data;
-    using ParserData = BitcoinBlockchain.Data;
+    using ParserData = ZcashBlockchain.Data;
 
     public class DatabaseGenerator
     {
@@ -398,12 +398,13 @@ namespace BitcoinDatabaseGenerator
                     // the database primary keys are generated in a certain order. The primary keys in our tables will be 
                     // in the same order as the corresponding entities appear in the blockchain. For example, with the 
                     // current implementation, the block ID will be the block depth as reported by http://blockchain.info/. 
-                    DatabaseIdSegmentManager databaseIdSegmentManager = new DatabaseIdSegmentManager(databaseIdManager, 1, block.Transactions.Count, block.TransactionInputsCount, block.TransactionOutputsCount);
+                    DatabaseIdSegmentManager databaseIdSegmentManager = new DatabaseIdSegmentManager(databaseIdManager, 1, block.Transactions.Count, block.TransactionInputsCount, block.TransactionOutputsCount, block.JoinSplitsCount);
 
                     this.processingStatistics.AddBlocksCount(1);
                     this.processingStatistics.AddTransactionsCount(block.Transactions.Count);
                     this.processingStatistics.AddTransactionInputsCount(block.TransactionInputsCount);
                     this.processingStatistics.AddTransactionOutputsCount(block.TransactionOutputsCount);
+                    this.processingStatistics.AddJoinSplitsCount(block.JoinSplitsCount);
 
                     int blockFileId2 = blockFileId;
                     ParserData.Block block2 = block;
@@ -490,10 +491,11 @@ namespace BitcoinDatabaseGenerator
                 long bitcoinTransactionId;
                 long transactionInputId;
                 long transactionOutputId;
+                long joinSplitId;
 
-                bitcoinDataLayer.GetMaximumIdValues(out blockFileId, out blockId, out bitcoinTransactionId, out transactionInputId, out transactionOutputId);
+                bitcoinDataLayer.GetMaximumIdValues(out blockFileId, out blockId, out bitcoinTransactionId, out transactionInputId, out transactionOutputId, out joinSplitId);
 
-                return new DatabaseIdManager(blockFileId + 1, blockId + 1, bitcoinTransactionId + 1, transactionInputId + 1, transactionOutputId + 1);
+                return new DatabaseIdManager(blockFileId + 1, blockId + 1, bitcoinTransactionId + 1, transactionInputId + 1, transactionOutputId + 1, joinSplitId + 1);
             }
         }
 

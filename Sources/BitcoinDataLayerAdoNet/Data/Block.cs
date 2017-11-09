@@ -7,7 +7,7 @@
 namespace BitcoinDataLayerAdoNet.Data
 {
     using System;
-    using BitcoinBlockchain.Data;
+    using ZcashBlockchain.Data;
 
     /// <summary>
     /// Contains information about a Bitcoin block as saved in the Bitcoin SQL database.

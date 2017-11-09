@@ -39,10 +39,6 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BitcoinBlockchain, Version=1.2.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\BitcoinBlockchain.1.2.5.0\lib\net45\BitcoinBlockchain.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,6 +46,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="ZcashBlockchain">
+      <HintPath>..\..\..\ZcashBlockchain\Sources\BitcoinBlockchain\bin\Release\ZcashBlockchain.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BitcoinDataLayer.cs" />
@@ -66,10 +65,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BlockDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\IndexInfoDataSet.cs">
+      <DependentUpon>IndexInfoDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\IndexInfoDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>IndexInfoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\JoinSplitDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JoinSplitDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSets\SummaryBlockDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -177,6 +184,17 @@
     </None>
     <None Include="DataSets\IndexInfoDataSet.xss">
       <DependentUpon>IndexInfoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\JoinSplitDataSet.xsc">
+      <DependentUpon>JoinSplitDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\JoinSplitDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>JoinSplitDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\JoinSplitDataSet.xss">
+      <DependentUpon>JoinSplitDataSet.xsd</DependentUpon>
     </None>
     <None Include="DataSets\SummaryBlockDataSet.xsc">
       <DependentUpon>SummaryBlockDataSet.xsd</DependentUpon>

@@ -9,7 +9,7 @@ namespace BitcoinDatabaseGenerator
     using System;
     using System.Globalization;
     using System.Reflection;
-    using BitcoinBlockchain.Parser;
+    using ZcashBlockchain.Parser;
     using BitcoinDataLayerAdoNet;
     using ZeroHelpers.Exceptions;
     using ZeroHelpers.ParameterParser;
@@ -79,7 +79,8 @@ namespace BitcoinDatabaseGenerator
             }
 
             Console.WriteLine();
-
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
             //// TypePeakMemoryUsage();
 
             return result;
@@ -151,7 +152,7 @@ namespace BitcoinDatabaseGenerator
 
             Console.Write(
 @"
-Transfers data from Bitcoin blockchain files into a SQL Server database.
+Transfers data from Zcash blockchain files into a SQL Server database.
 
 For access to sources and more information visit: 
 https://github.com/ladimolnar/BitcoinDatabaseGenerator/wiki

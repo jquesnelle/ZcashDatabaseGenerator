@@ -38,6 +38,8 @@ namespace BitcoinDatabaseGenerator
 
         public long TransactionOutputsCount { get; private set; }
 
+        public long JoinSplitsCount { get; private set; }
+
         public TimeSpan PreprocessingDuration
         {
             get { return this.preprocessingWatch.Elapsed; }
@@ -98,6 +100,14 @@ namespace BitcoinDatabaseGenerator
             }
         }
 
+        public void AddJoinSplitsCount(int count)
+        {
+            lock (this.lockObject)
+            {
+                this.JoinSplitsCount += count;
+            }
+        }
+
         public void PreprocessingStarting()
         {
             this.totalProcessingWatch.Start();
@@ -132,6 +142,7 @@ namespace BitcoinDatabaseGenerator
             Console.WriteLine("                Transactions: {0,14:n0}", this.TransactionsCount);
             Console.WriteLine("          Transaction Inputs: {0,14:n0}", this.TransactionInputsCount);
             Console.WriteLine("         Transaction Outputs: {0,14:n0}", this.TransactionOutputsCount);
+            Console.WriteLine("                  JoinSplits: {0,14:n0}", this.JoinSplitsCount);
             Console.WriteLine();
 
             TimeSpan preprocessingDuration = this.PreprocessingDuration;

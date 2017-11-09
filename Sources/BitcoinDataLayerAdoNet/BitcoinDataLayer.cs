@@ -216,13 +216,14 @@ namespace BitcoinDataLayerAdoNet
             this.adoNetLayer.ExecuteStatementNoResult(sqlUpdateSourceTransactionOutputIdCommand);
         }
 
-        public void GetMaximumIdValues(out int blockchainFileId, out long blockId, out long bitcoinTransactionId, out long transactionInputId, out long transactionOutputId)
+        public void GetMaximumIdValues(out int blockchainFileId, out long blockId, out long bitcoinTransactionId, out long transactionInputId, out long transactionOutputId, out long joinSplitId)
         {
             blockchainFileId = AdoNetLayer.ConvertDbValue<int>(this.adoNetLayer.ExecuteScalar("SELECT MAX(BlockchainFileId) from BlockchainFile"), -1);
             blockId = AdoNetLayer.ConvertDbValue<long>(this.adoNetLayer.ExecuteScalar("SELECT MAX(BlockId) from Block"), -1);
             bitcoinTransactionId = AdoNetLayer.ConvertDbValue<long>(this.adoNetLayer.ExecuteScalar("SELECT MAX(BitcoinTransactionId) from BitcoinTransaction"), -1);
             transactionInputId = AdoNetLayer.ConvertDbValue<long>(this.adoNetLayer.ExecuteScalar("SELECT MAX(TransactionInputId) from TransactionInput"), -1);
             transactionOutputId = AdoNetLayer.ConvertDbValue<long>(this.adoNetLayer.ExecuteScalar("SELECT MAX(TransactionOutputId) from TransactionOutput"), -1);
+            joinSplitId = AdoNetLayer.ConvertDbValue<long>(this.adoNetLayer.ExecuteScalar("SELECT MAX(JoinSplitId) from JoinSplit"), -1);
         }
 
         public void GetDatabaseEntitiesCount(out int blockchainFileCount, out int blockCount, out int transactionCount, out int transactionInputCount, out int transactionOutputCount)

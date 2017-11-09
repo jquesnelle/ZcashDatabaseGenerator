@@ -40,7 +40,15 @@ CREATE TABLE Block (
     -- Note: hash is in reverse order.
     PreviousBlockHash               VARBINARY (32)                  NOT NULL,
 
-    BlockTimestamp                  DATETIME                        NOT NULL
+    BlockTimestamp                  DATETIME                        NOT NULL,
+
+	TransparentSpent				NUMERIC(20,8)				    NOT NULL,
+	ShieldedIn 						NUMERIC(20,8)					NOT NULL,
+	ShieldedOut 					NUMERIC(20,8)					NOT NULL,
+	ShieldedDiff 					NUMERIC(20,8)					NOT NULL,
+	SumShielded                     NUMERIC(20,8)					NOT NULL,
+	BlockReward                     NUMERIC(20,8)					NOT NULL,
+	TotalSupply                     NUMERIC(20,8)					NOT NULL
 );
 
 
@@ -122,11 +130,25 @@ CREATE TABLE TransactionOutput (
     BitcoinTransactionId            BIGINT                          NOT NULL,
     OutputIndex                     INT                             NOT NULL,
     OutputValueBtc                  NUMERIC(20,8)                   NOT NULL,
-    OutputScript                    VARBINARY (MAX)                 NOT NULL
+	OutputAddress                   VARCHAR(35)
 );
 
 CREATE INDEX IX_TransactionOutput_BitcoinTransactionId ON TransactionOutput(BitcoinTransactionId)
+CREATE INDEX IX_TransactionOutput_OutputAddress ON TransactionOutput(OutputAddress)
 
+-- ==========================================================================
+-- TABLE: JoinSplit
+-- Contains information about JoinSplits
+-- ==========================================================================
+CREATE TABLE JoinSplit (
+    JoinSplitId                     BIGINT PRIMARY KEY              NOT NULL,
+    BitcoinTransactionId            BIGINT                          NOT NULL,
+	JoinSplitIndex                  INT                             NOT NULL,
+	InputValue						NUMERIC(20,8)				    NOT NULL,
+	OutputValue 					NUMERIC(20,8)					NOT NULL
+);
+
+CREATE INDEX IX_JoinSplit_BitcoinTransactionId ON JoinSplit(BitcoinTransactionId)
 
 -- ==========================================================================
 -- TABLE: BtcDbSettings

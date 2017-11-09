@@ -9,7 +9,7 @@ namespace BitcoinDatabaseGeneratorIntegrationTest.Tests
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using BitcoinBlockchain.Data;
+    using ZcashBlockchain.Data;
     using BitcoinDatabaseGenerator;
     using BitcoinDatabaseGeneratorIntegrationTest.Helpers;
     using BitcoinDataLayerAdoNet;

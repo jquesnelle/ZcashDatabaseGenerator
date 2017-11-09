@@ -10,7 +10,7 @@ namespace BitcoinDatabaseGenerator
     using System.Data;
     using BitcoinDataLayerAdoNet.DataSets;
     using DBData = BitcoinDataLayerAdoNet.Data;
-    using ParserData = BitcoinBlockchain.Data;
+    using ParserData = ZcashBlockchain.Data;
 
     /// <summary>
     /// Stores data tables that will be used as the source for the SQL bulk copy operation.
@@ -31,12 +31,14 @@ namespace BitcoinDatabaseGenerator
         private readonly object bitcoinTransactionLockObject;
         private readonly object transactionInputLockObject;
         private readonly object transactionOutputLockObject;
+        private readonly object joinSplitLockObject;
 
         private BlockDataSet blockDataSet;
         private BitcoinTransactionDataSet bitcoinTransactionDataSetBuffer;
         private TransactionInputDataSet transactionInputDataSetBuffer;
         private TransactionInputSourceDataSet transactionInputSourceDataSetBuffer;
         private TransactionOutputDataSet transactionOutputDataSetBuffer;
+        private JoinSplitDataSet JoinSplitDataSetBuffer;
 
         public SourceDataPipeline()
         {
@@ -44,12 +46,14 @@ namespace BitcoinDatabaseGenerator
             this.bitcoinTransactionLockObject = new object();
             this.transactionInputLockObject = new object();
             this.transactionOutputLockObject = new object();
+            this.joinSplitLockObject = new object();
 
             this.blockDataSet = new BlockDataSet();
             this.bitcoinTransactionDataSetBuffer = new BitcoinTransactionDataSet();
             this.transactionInputDataSetBuffer = new TransactionInputDataSet();
             this.transactionInputSourceDataSetBuffer = new TransactionInputSourceDataSet();
             this.transactionOutputDataSetBuffer = new TransactionOutputDataSet();
+            this.JoinSplitDataSetBuffer = new JoinSplitDataSet();
 
             this.availableDataTables = new ConcurrentQueue<DataTable>();
         }
@@ -73,7 +77,14 @@ namespace BitcoinDatabaseGenerator
                     (int)parserBlock.BlockHeader.BlockVersion,
                     parserBlock.BlockHeader.BlockHash.ToArray(),
                     parserBlock.BlockHeader.PreviousBlockHash.ToArray(),
-                    parserBlock.BlockHeader.BlockTimestamp);
+                    parserBlock.BlockHeader.BlockTimestamp,
+                    (decimal)parserBlock.TransparentSpent / DatabaseGenerator.BtcToSatoshi,
+                    (decimal)parserBlock.ShieldedIn / DatabaseGenerator.BtcToSatoshi,
+                    (decimal)parserBlock.ShieldedOut / DatabaseGenerator.BtcToSatoshi,
+                    (decimal)parserBlock.ShieldedDiff / DatabaseGenerator.BtcToSatoshi,
+                    (decimal)parserBlock.SumShielded / DatabaseGenerator.BtcToSatoshi,
+                    (decimal)parserBlock.BlockReward / DatabaseGenerator.BtcToSatoshi,
+                    (decimal)parserBlock.TotalSupply / DatabaseGenerator.BtcToSatoshi);
 
                 if (this.MakeDataTableAvailableIfLarge(this.blockDataSet.Block))
                 {
@@ -152,13 +163,40 @@ namespace BitcoinDatabaseGenerator
                             bitcoinTransactionId,
                             outputIndex,
                             (decimal)parserTransactionOutput.OutputValueSatoshi / DatabaseGenerator.BtcToSatoshi,
-                            parserTransactionOutput.OutputScript.ToArray());
+                            parserTransactionOutput.Address);
                     }
                 }
 
                 if (this.MakeDataTableAvailableIfLarge(this.transactionOutputDataSetBuffer.TransactionOutput))
                 {
                     this.transactionOutputDataSetBuffer = new TransactionOutputDataSet();
+                }
+            }
+
+            lock (this.joinSplitLockObject)
+            {
+                databaseIdSegmentManager.ResetNextTransactionId();
+                foreach (ParserData.Transaction parserTransaction in parserBlock.Transactions)
+                {
+                    long bitcoinTransactionId = databaseIdSegmentManager.GetNextTransactionId();
+
+                    for (int joinSplitIndex = 0; joinSplitIndex < parserTransaction.JoinSplits.Count; ++joinSplitIndex)
+                    {
+                        ParserData.JoinSplit parserJoinSplit = parserTransaction.JoinSplits[joinSplitIndex];
+                        long joinSplitId = databaseIdSegmentManager.GetNextJoinSplitId();
+
+                        this.JoinSplitDataSetBuffer.JoinSplit.AddJoinSplitRow(
+                            joinSplitId,
+                            bitcoinTransactionId,
+                            joinSplitIndex,
+                            (decimal)parserJoinSplit.AmountIn / DatabaseGenerator.BtcToSatoshi,
+                            (decimal)parserJoinSplit.AmountOut / DatabaseGenerator.BtcToSatoshi);
+                    }
+                }
+
+                if (this.MakeDataTableAvailableIfLarge(this.JoinSplitDataSetBuffer.JoinSplit))
+                {
+                    this.JoinSplitDataSetBuffer = new JoinSplitDataSet();
                 }
             }
         }
@@ -170,6 +208,7 @@ namespace BitcoinDatabaseGenerator
             this.availableDataTables.Enqueue(this.transactionInputDataSetBuffer.TransactionInput);
             this.availableDataTables.Enqueue(this.transactionInputSourceDataSetBuffer.TransactionInputSource);
             this.availableDataTables.Enqueue(this.transactionOutputDataSetBuffer.TransactionOutput);
+            this.availableDataTables.Enqueue(this.JoinSplitDataSetBuffer.JoinSplit);
         }
 
         private bool MakeDataTableAvailableIfLarge(DataTable dataTable)

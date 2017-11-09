@@ -20,17 +20,17 @@ namespace BitcoinDataLayerAdoNet.DataSets {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("BlockDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("JoinSplitDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class BlockDataSet : global::System.Data.DataSet {
+    public partial class JoinSplitDataSet : global::System.Data.DataSet {
         
-        private BlockDataTable tableBlock;
+        private JoinSplitDataTable tableJoinSplit;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public BlockDataSet() {
+        public JoinSplitDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace BitcoinDataLayerAdoNet.DataSets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected BlockDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected JoinSplitDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace BitcoinDataLayerAdoNet.DataSets {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Block"] != null)) {
-                    base.Tables.Add(new BlockDataTable(ds.Tables["Block"]));
+                if ((ds.Tables["JoinSplit"] != null)) {
+                    base.Tables.Add(new JoinSplitDataTable(ds.Tables["JoinSplit"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace BitcoinDataLayerAdoNet.DataSets {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public BlockDataTable Block {
+        public JoinSplitDataTable JoinSplit {
             get {
-                return this.tableBlock;
+                return this.tableJoinSplit;
             }
         }
         
@@ -127,7 +127,7 @@ namespace BitcoinDataLayerAdoNet.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            BlockDataSet cln = ((BlockDataSet)(base.Clone()));
+            JoinSplitDataSet cln = ((JoinSplitDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace BitcoinDataLayerAdoNet.DataSets {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Block"] != null)) {
-                    base.Tables.Add(new BlockDataTable(ds.Tables["Block"]));
+                if ((ds.Tables["JoinSplit"] != null)) {
+                    base.Tables.Add(new JoinSplitDataTable(ds.Tables["JoinSplit"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace BitcoinDataLayerAdoNet.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableBlock = ((BlockDataTable)(base.Tables["Block"]));
+            this.tableJoinSplit = ((JoinSplitDataTable)(base.Tables["JoinSplit"]));
             if ((initTable == true)) {
-                if ((this.tableBlock != null)) {
-                    this.tableBlock.InitVars();
+                if ((this.tableJoinSplit != null)) {
+                    this.tableJoinSplit.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace BitcoinDataLayerAdoNet.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "BlockDataSet";
+            this.DataSetName = "JoinSplitDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/BlockDataSet.xsd";
+            this.Namespace = "http://tempuri.org/JoinSplitDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableBlock = new BlockDataTable();
-            base.Tables.Add(this.tableBlock);
+            this.tableJoinSplit = new JoinSplitDataTable();
+            base.Tables.Add(this.tableJoinSplit);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeBlock() {
+        private bool ShouldSerializeJoinSplit() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace BitcoinDataLayerAdoNet.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            BlockDataSet ds = new BlockDataSet();
+            JoinSplitDataSet ds = new JoinSplitDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,45 +270,29 @@ namespace BitcoinDataLayerAdoNet.DataSets {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void BlockRowChangeEventHandler(object sender, BlockRowChangeEvent e);
+        public delegate void JoinSplitRowChangeEventHandler(object sender, JoinSplitRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class BlockDataTable : global::System.Data.TypedTableBase<BlockRow> {
+        public partial class JoinSplitDataTable : global::System.Data.TypedTableBase<JoinSplitRow> {
             
-            private global::System.Data.DataColumn columnBlockId;
+            private global::System.Data.DataColumn columnJoinSplitId;
             
-            private global::System.Data.DataColumn columnBlockchainFileId;
+            private global::System.Data.DataColumn columnBitcoinTransactionId;
             
-            private global::System.Data.DataColumn columnBlockVersion;
+            private global::System.Data.DataColumn columnJoinSplitIndex;
             
-            private global::System.Data.DataColumn columnBlockHash;
+            private global::System.Data.DataColumn columnInputValue;
             
-            private global::System.Data.DataColumn columnPreviousBlockHash;
-            
-            private global::System.Data.DataColumn columnBlockTimestamp;
-            
-            private global::System.Data.DataColumn columnTransparentSpent;
-            
-            private global::System.Data.DataColumn columnShieldedIn;
-            
-            private global::System.Data.DataColumn columnShieldedOut;
-            
-            private global::System.Data.DataColumn columnShieldedDiff;
-            
-            private global::System.Data.DataColumn columnSumShielded;
-            
-            private global::System.Data.DataColumn columnBlockReward;
-            
-            private global::System.Data.DataColumn columnTotalSupply;
+            private global::System.Data.DataColumn columnOutputValue;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public BlockDataTable() {
-                this.TableName = "Block";
+            public JoinSplitDataTable() {
+                this.TableName = "JoinSplit";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -316,7 +300,7 @@ namespace BitcoinDataLayerAdoNet.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal BlockDataTable(global::System.Data.DataTable table) {
+            internal JoinSplitDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -333,112 +317,48 @@ namespace BitcoinDataLayerAdoNet.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected BlockDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected JoinSplitDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn BlockIdColumn {
+            public global::System.Data.DataColumn JoinSplitIdColumn {
                 get {
-                    return this.columnBlockId;
+                    return this.columnJoinSplitId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn BlockchainFileIdColumn {
+            public global::System.Data.DataColumn BitcoinTransactionIdColumn {
                 get {
-                    return this.columnBlockchainFileId;
+                    return this.columnBitcoinTransactionId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn BlockVersionColumn {
+            public global::System.Data.DataColumn JoinSplitIndexColumn {
                 get {
-                    return this.columnBlockVersion;
+                    return this.columnJoinSplitIndex;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn BlockHashColumn {
+            public global::System.Data.DataColumn InputValueColumn {
                 get {
-                    return this.columnBlockHash;
+                    return this.columnInputValue;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PreviousBlockHashColumn {
+            public global::System.Data.DataColumn OutputValueColumn {
                 get {
-                    return this.columnPreviousBlockHash;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn BlockTimestampColumn {
-                get {
-                    return this.columnBlockTimestamp;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn TransparentSpentColumn {
-                get {
-                    return this.columnTransparentSpent;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ShieldedInColumn {
-                get {
-                    return this.columnShieldedIn;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ShieldedOutColumn {
-                get {
-                    return this.columnShieldedOut;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ShieldedDiffColumn {
-                get {
-                    return this.columnShieldedDiff;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SumShieldedColumn {
-                get {
-                    return this.columnSumShielded;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn BlockRewardColumn {
-                get {
-                    return this.columnBlockReward;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn TotalSupplyColumn {
-                get {
-                    return this.columnTotalSupply;
+                    return this.columnOutputValue;
                 }
             }
             
@@ -453,64 +373,56 @@ namespace BitcoinDataLayerAdoNet.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public BlockRow this[int index] {
+            public JoinSplitRow this[int index] {
                 get {
-                    return ((BlockRow)(this.Rows[index]));
+                    return ((JoinSplitRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event BlockRowChangeEventHandler BlockRowChanging;
+            public event JoinSplitRowChangeEventHandler JoinSplitRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event BlockRowChangeEventHandler BlockRowChanged;
+            public event JoinSplitRowChangeEventHandler JoinSplitRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event BlockRowChangeEventHandler BlockRowDeleting;
+            public event JoinSplitRowChangeEventHandler JoinSplitRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event BlockRowChangeEventHandler BlockRowDeleted;
+            public event JoinSplitRowChangeEventHandler JoinSplitRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddBlockRow(BlockRow row) {
+            public void AddJoinSplitRow(JoinSplitRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public BlockRow AddBlockRow(long BlockId, int BlockchainFileId, int BlockVersion, byte[] BlockHash, byte[] PreviousBlockHash, System.DateTime BlockTimestamp, decimal TransparentSpent, decimal ShieldedIn, decimal ShieldedOut, decimal ShieldedDiff, decimal SumShielded, decimal BlockReward, decimal TotalSupply) {
-                BlockRow rowBlockRow = ((BlockRow)(this.NewRow()));
+            public JoinSplitRow AddJoinSplitRow(long JoinSplitId, long BitcoinTransactionId, int JoinSplitIndex, decimal InputValue, decimal OutputValue) {
+                JoinSplitRow rowJoinSplitRow = ((JoinSplitRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        BlockId,
-                        BlockchainFileId,
-                        BlockVersion,
-                        BlockHash,
-                        PreviousBlockHash,
-                        BlockTimestamp,
-                        TransparentSpent,
-                        ShieldedIn,
-                        ShieldedOut,
-                        ShieldedDiff,
-                        SumShielded,
-                        BlockReward,
-                        TotalSupply};
-                rowBlockRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowBlockRow);
-                return rowBlockRow;
+                        JoinSplitId,
+                        BitcoinTransactionId,
+                        JoinSplitIndex,
+                        InputValue,
+                        OutputValue};
+                rowJoinSplitRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowJoinSplitRow);
+                return rowJoinSplitRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public BlockRow FindByBlockId(long BlockId) {
-                return ((BlockRow)(this.Rows.Find(new object[] {
-                            BlockId})));
+            public JoinSplitRow FindByJoinSplitId(long JoinSplitId) {
+                return ((JoinSplitRow)(this.Rows.Find(new object[] {
+                            JoinSplitId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                BlockDataTable cln = ((BlockDataTable)(base.Clone()));
+                JoinSplitDataTable cln = ((JoinSplitDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -518,98 +430,66 @@ namespace BitcoinDataLayerAdoNet.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new BlockDataTable();
+                return new JoinSplitDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnBlockId = base.Columns["BlockId"];
-                this.columnBlockchainFileId = base.Columns["BlockchainFileId"];
-                this.columnBlockVersion = base.Columns["BlockVersion"];
-                this.columnBlockHash = base.Columns["BlockHash"];
-                this.columnPreviousBlockHash = base.Columns["PreviousBlockHash"];
-                this.columnBlockTimestamp = base.Columns["BlockTimestamp"];
-                this.columnTransparentSpent = base.Columns["TransparentSpent"];
-                this.columnShieldedIn = base.Columns["ShieldedIn"];
-                this.columnShieldedOut = base.Columns["ShieldedOut"];
-                this.columnShieldedDiff = base.Columns["ShieldedDiff"];
-                this.columnSumShielded = base.Columns["SumShielded"];
-                this.columnBlockReward = base.Columns["BlockReward"];
-                this.columnTotalSupply = base.Columns["TotalSupply"];
+                this.columnJoinSplitId = base.Columns["JoinSplitId"];
+                this.columnBitcoinTransactionId = base.Columns["BitcoinTransactionId"];
+                this.columnJoinSplitIndex = base.Columns["JoinSplitIndex"];
+                this.columnInputValue = base.Columns["InputValue"];
+                this.columnOutputValue = base.Columns["OutputValue"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnBlockId = new global::System.Data.DataColumn("BlockId", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBlockId);
-                this.columnBlockchainFileId = new global::System.Data.DataColumn("BlockchainFileId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBlockchainFileId);
-                this.columnBlockVersion = new global::System.Data.DataColumn("BlockVersion", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBlockVersion);
-                this.columnBlockHash = new global::System.Data.DataColumn("BlockHash", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBlockHash);
-                this.columnPreviousBlockHash = new global::System.Data.DataColumn("PreviousBlockHash", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPreviousBlockHash);
-                this.columnBlockTimestamp = new global::System.Data.DataColumn("BlockTimestamp", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBlockTimestamp);
-                this.columnTransparentSpent = new global::System.Data.DataColumn("TransparentSpent", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTransparentSpent);
-                this.columnShieldedIn = new global::System.Data.DataColumn("ShieldedIn", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnShieldedIn);
-                this.columnShieldedOut = new global::System.Data.DataColumn("ShieldedOut", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnShieldedOut);
-                this.columnShieldedDiff = new global::System.Data.DataColumn("ShieldedDiff", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnShieldedDiff);
-                this.columnSumShielded = new global::System.Data.DataColumn("SumShielded", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSumShielded);
-                this.columnBlockReward = new global::System.Data.DataColumn("BlockReward", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBlockReward);
-                this.columnTotalSupply = new global::System.Data.DataColumn("TotalSupply", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotalSupply);
+                this.columnJoinSplitId = new global::System.Data.DataColumn("JoinSplitId", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJoinSplitId);
+                this.columnBitcoinTransactionId = new global::System.Data.DataColumn("BitcoinTransactionId", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBitcoinTransactionId);
+                this.columnJoinSplitIndex = new global::System.Data.DataColumn("JoinSplitIndex", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJoinSplitIndex);
+                this.columnInputValue = new global::System.Data.DataColumn("InputValue", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInputValue);
+                this.columnOutputValue = new global::System.Data.DataColumn("OutputValue", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOutputValue);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnBlockId}, true));
-                this.columnBlockId.AllowDBNull = false;
-                this.columnBlockId.Unique = true;
-                this.columnBlockchainFileId.AllowDBNull = false;
-                this.columnBlockVersion.AllowDBNull = false;
-                this.columnBlockHash.AllowDBNull = false;
-                this.columnPreviousBlockHash.AllowDBNull = false;
-                this.columnBlockTimestamp.AllowDBNull = false;
-                this.columnTransparentSpent.AllowDBNull = false;
-                this.columnShieldedIn.AllowDBNull = false;
-                this.columnShieldedOut.AllowDBNull = false;
-                this.columnShieldedDiff.AllowDBNull = false;
-                this.columnSumShielded.AllowDBNull = false;
-                this.columnBlockReward.AllowDBNull = false;
-                this.columnTotalSupply.AllowDBNull = false;
+                                this.columnJoinSplitId}, true));
+                this.columnJoinSplitId.AllowDBNull = false;
+                this.columnJoinSplitId.Unique = true;
+                this.columnBitcoinTransactionId.AllowDBNull = false;
+                this.columnJoinSplitIndex.AllowDBNull = false;
+                this.columnInputValue.AllowDBNull = false;
+                this.columnOutputValue.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public BlockRow NewBlockRow() {
-                return ((BlockRow)(this.NewRow()));
+            public JoinSplitRow NewJoinSplitRow() {
+                return ((JoinSplitRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new BlockRow(builder);
+                return new JoinSplitRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(BlockRow);
+                return typeof(JoinSplitRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.BlockRowChanged != null)) {
-                    this.BlockRowChanged(this, new BlockRowChangeEvent(((BlockRow)(e.Row)), e.Action));
+                if ((this.JoinSplitRowChanged != null)) {
+                    this.JoinSplitRowChanged(this, new JoinSplitRowChangeEvent(((JoinSplitRow)(e.Row)), e.Action));
                 }
             }
             
@@ -617,8 +497,8 @@ namespace BitcoinDataLayerAdoNet.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.BlockRowChanging != null)) {
-                    this.BlockRowChanging(this, new BlockRowChangeEvent(((BlockRow)(e.Row)), e.Action));
+                if ((this.JoinSplitRowChanging != null)) {
+                    this.JoinSplitRowChanging(this, new JoinSplitRowChangeEvent(((JoinSplitRow)(e.Row)), e.Action));
                 }
             }
             
@@ -626,8 +506,8 @@ namespace BitcoinDataLayerAdoNet.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.BlockRowDeleted != null)) {
-                    this.BlockRowDeleted(this, new BlockRowChangeEvent(((BlockRow)(e.Row)), e.Action));
+                if ((this.JoinSplitRowDeleted != null)) {
+                    this.JoinSplitRowDeleted(this, new JoinSplitRowChangeEvent(((JoinSplitRow)(e.Row)), e.Action));
                 }
             }
             
@@ -635,14 +515,14 @@ namespace BitcoinDataLayerAdoNet.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.BlockRowDeleting != null)) {
-                    this.BlockRowDeleting(this, new BlockRowChangeEvent(((BlockRow)(e.Row)), e.Action));
+                if ((this.JoinSplitRowDeleting != null)) {
+                    this.JoinSplitRowDeleting(this, new JoinSplitRowChangeEvent(((JoinSplitRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveBlockRow(BlockRow row) {
+            public void RemoveJoinSplitRow(JoinSplitRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -651,7 +531,7 @@ namespace BitcoinDataLayerAdoNet.DataSets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BlockDataSet ds = new BlockDataSet();
+                JoinSplitDataSet ds = new JoinSplitDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -669,7 +549,7 @@ namespace BitcoinDataLayerAdoNet.DataSets {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "BlockDataTable";
+                attribute2.FixedValue = "JoinSplitDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -713,157 +593,69 @@ namespace BitcoinDataLayerAdoNet.DataSets {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class BlockRow : global::System.Data.DataRow {
+        public partial class JoinSplitRow : global::System.Data.DataRow {
             
-            private BlockDataTable tableBlock;
+            private JoinSplitDataTable tableJoinSplit;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal BlockRow(global::System.Data.DataRowBuilder rb) : 
+            internal JoinSplitRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableBlock = ((BlockDataTable)(this.Table));
+                this.tableJoinSplit = ((JoinSplitDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public long BlockId {
+            public long JoinSplitId {
                 get {
-                    return ((long)(this[this.tableBlock.BlockIdColumn]));
+                    return ((long)(this[this.tableJoinSplit.JoinSplitIdColumn]));
                 }
                 set {
-                    this[this.tableBlock.BlockIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int BlockchainFileId {
-                get {
-                    return ((int)(this[this.tableBlock.BlockchainFileIdColumn]));
-                }
-                set {
-                    this[this.tableBlock.BlockchainFileIdColumn] = value;
+                    this[this.tableJoinSplit.JoinSplitIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int BlockVersion {
+            public long BitcoinTransactionId {
                 get {
-                    return ((int)(this[this.tableBlock.BlockVersionColumn]));
+                    return ((long)(this[this.tableJoinSplit.BitcoinTransactionIdColumn]));
                 }
                 set {
-                    this[this.tableBlock.BlockVersionColumn] = value;
+                    this[this.tableJoinSplit.BitcoinTransactionIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public byte[] BlockHash {
+            public int JoinSplitIndex {
                 get {
-                    return ((byte[])(this[this.tableBlock.BlockHashColumn]));
+                    return ((int)(this[this.tableJoinSplit.JoinSplitIndexColumn]));
                 }
                 set {
-                    this[this.tableBlock.BlockHashColumn] = value;
+                    this[this.tableJoinSplit.JoinSplitIndexColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public byte[] PreviousBlockHash {
+            public decimal InputValue {
                 get {
-                    return ((byte[])(this[this.tableBlock.PreviousBlockHashColumn]));
+                    return ((decimal)(this[this.tableJoinSplit.InputValueColumn]));
                 }
                 set {
-                    this[this.tableBlock.PreviousBlockHashColumn] = value;
+                    this[this.tableJoinSplit.InputValueColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime BlockTimestamp {
+            public decimal OutputValue {
                 get {
-                    return ((global::System.DateTime)(this[this.tableBlock.BlockTimestampColumn]));
+                    return ((decimal)(this[this.tableJoinSplit.OutputValueColumn]));
                 }
                 set {
-                    this[this.tableBlock.BlockTimestampColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal TransparentSpent {
-                get {
-                    return ((decimal)(this[this.tableBlock.TransparentSpentColumn]));
-                }
-                set {
-                    this[this.tableBlock.TransparentSpentColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal ShieldedIn {
-                get {
-                    return ((decimal)(this[this.tableBlock.ShieldedInColumn]));
-                }
-                set {
-                    this[this.tableBlock.ShieldedInColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal ShieldedOut {
-                get {
-                    return ((decimal)(this[this.tableBlock.ShieldedOutColumn]));
-                }
-                set {
-                    this[this.tableBlock.ShieldedOutColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal ShieldedDiff {
-                get {
-                    return ((decimal)(this[this.tableBlock.ShieldedDiffColumn]));
-                }
-                set {
-                    this[this.tableBlock.ShieldedDiffColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal SumShielded {
-                get {
-                    return ((decimal)(this[this.tableBlock.SumShieldedColumn]));
-                }
-                set {
-                    this[this.tableBlock.SumShieldedColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal BlockReward {
-                get {
-                    return ((decimal)(this[this.tableBlock.BlockRewardColumn]));
-                }
-                set {
-                    this[this.tableBlock.BlockRewardColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal TotalSupply {
-                get {
-                    return ((decimal)(this[this.tableBlock.TotalSupplyColumn]));
-                }
-                set {
-                    this[this.tableBlock.TotalSupplyColumn] = value;
+                    this[this.tableJoinSplit.OutputValueColumn] = value;
                 }
             }
         }
@@ -872,22 +664,22 @@ namespace BitcoinDataLayerAdoNet.DataSets {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class BlockRowChangeEvent : global::System.EventArgs {
+        public class JoinSplitRowChangeEvent : global::System.EventArgs {
             
-            private BlockRow eventRow;
+            private JoinSplitRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public BlockRowChangeEvent(BlockRow row, global::System.Data.DataRowAction action) {
+            public JoinSplitRowChangeEvent(JoinSplitRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public BlockRow Row {
+            public JoinSplitRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -903,7 +695,7 @@ namespace BitcoinDataLayerAdoNet.DataSets {
         }
     }
 }
-namespace BitcoinDataLayerAdoNet.DataSets.BlockDataSetTableAdapters {
+namespace BitcoinDataLayerAdoNet.DataSets.JoinSplitDataSetTableAdapters {
     
     
     /// <summary>
@@ -915,7 +707,7 @@ namespace BitcoinDataLayerAdoNet.DataSets.BlockDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class BlockTableAdapter : global::System.ComponentModel.Component {
+    public partial class JoinSplitTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -929,7 +721,7 @@ namespace BitcoinDataLayerAdoNet.DataSets.BlockDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public BlockTableAdapter() {
+        public JoinSplitTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1026,87 +818,47 @@ namespace BitcoinDataLayerAdoNet.DataSets.BlockDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Block";
-            tableMapping.ColumnMappings.Add("BlockId", "BlockId");
-            tableMapping.ColumnMappings.Add("BlockchainFileId", "BlockchainFileId");
-            tableMapping.ColumnMappings.Add("BlockVersion", "BlockVersion");
-            tableMapping.ColumnMappings.Add("BlockHash", "BlockHash");
-            tableMapping.ColumnMappings.Add("PreviousBlockHash", "PreviousBlockHash");
-            tableMapping.ColumnMappings.Add("BlockTimestamp", "BlockTimestamp");
-            tableMapping.ColumnMappings.Add("TransparentSpent", "TransparentSpent");
-            tableMapping.ColumnMappings.Add("ShieldedIn", "ShieldedIn");
-            tableMapping.ColumnMappings.Add("ShieldedOut", "ShieldedOut");
-            tableMapping.ColumnMappings.Add("ShieldedDiff", "ShieldedDiff");
-            tableMapping.ColumnMappings.Add("SumShielded", "SumShielded");
-            tableMapping.ColumnMappings.Add("BlockReward", "BlockReward");
-            tableMapping.ColumnMappings.Add("TotalSupply", "TotalSupply");
+            tableMapping.DataSetTable = "JoinSplit";
+            tableMapping.ColumnMappings.Add("JoinSplitId", "JoinSplitId");
+            tableMapping.ColumnMappings.Add("BitcoinTransactionId", "BitcoinTransactionId");
+            tableMapping.ColumnMappings.Add("JoinSplitIndex", "JoinSplitIndex");
+            tableMapping.ColumnMappings.Add("InputValue", "InputValue");
+            tableMapping.ColumnMappings.Add("OutputValue", "OutputValue");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Block] WHERE (([BlockId] = @Original_BlockId) AND ([BlockchainFileId] = @Original_BlockchainFileId) AND ([BlockVersion] = @Original_BlockVersion) AND ([BlockHash] = @Original_BlockHash) AND ([PreviousBlockHash] = @Original_PreviousBlockHash) AND ([BlockTimestamp] = @Original_BlockTimestamp) AND ([TransparentSpent] = @Original_TransparentSpent) AND ([ShieldedIn] = @Original_ShieldedIn) AND ([ShieldedOut] = @Original_ShieldedOut) AND ([ShieldedDiff] = @Original_ShieldedDiff) AND ([SumShielded] = @Original_SumShielded) AND ([BlockReward] = @Original_BlockReward) AND ([TotalSupply] = @Original_TotalSupply))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [JoinSplit] WHERE (([JoinSplitId] = @Original_JoinSplitId) AND ([BitcoinTransactionId] = @Original_BitcoinTransactionId) AND ([JoinSplitIndex] = @Original_JoinSplitIndex) AND ([InputValue] = @Original_InputValue) AND ([OutputValue] = @Original_OutputValue))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BlockId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BlockchainFileId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockchainFileId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BlockVersion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockVersion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BlockHash", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockHash", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PreviousBlockHash", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreviousBlockHash", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BlockTimestamp", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockTimestamp", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TransparentSpent", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "TransparentSpent", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ShieldedIn", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedIn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ShieldedOut", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedOut", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ShieldedDiff", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedDiff", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SumShielded", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "SumShielded", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BlockReward", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "BlockReward", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalSupply", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "TotalSupply", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_JoinSplitId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JoinSplitId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BitcoinTransactionId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BitcoinTransactionId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_JoinSplitIndex", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JoinSplitIndex", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_InputValue", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "InputValue", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OutputValue", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "OutputValue", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Block] ([BlockId], [BlockchainFileId], [BlockVersion], [BlockHash], [PreviousBlockHash], [BlockTimestamp], [TransparentSpent], [ShieldedIn], [ShieldedOut], [ShieldedDiff], [SumShielded], [BlockReward], [TotalSupply]) VALUES (@BlockId, @BlockchainFileId, @BlockVersion, @BlockHash, @PreviousBlockHash, @BlockTimestamp, @TransparentSpent, @ShieldedIn, @ShieldedOut, @ShieldedDiff, @SumShielded, @BlockReward, @TotalSupply);
-SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, BlockTimestamp, TransparentSpent, ShieldedIn, ShieldedOut, ShieldedDiff, SumShielded, BlockReward, TotalSupply FROM Block WHERE (BlockId = @BlockId)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [JoinSplit] ([JoinSplitId], [BitcoinTransactionId], [JoinSplitIndex], [InputValue], [OutputValue]) VALUES (@JoinSplitId, @BitcoinTransactionId, @JoinSplitIndex, @InputValue, @OutputValue);
+SELECT JoinSplitId, BitcoinTransactionId, JoinSplitIndex, InputValue, OutputValue FROM JoinSplit WHERE (JoinSplitId = @JoinSplitId)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BlockId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BlockchainFileId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockchainFileId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BlockVersion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockVersion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BlockHash", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockHash", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PreviousBlockHash", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreviousBlockHash", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BlockTimestamp", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockTimestamp", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TransparentSpent", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "TransparentSpent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShieldedIn", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedIn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShieldedOut", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedOut", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShieldedDiff", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedDiff", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SumShielded", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "SumShielded", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BlockReward", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "BlockReward", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalSupply", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "TotalSupply", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JoinSplitId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JoinSplitId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BitcoinTransactionId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BitcoinTransactionId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JoinSplitIndex", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JoinSplitIndex", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@InputValue", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "InputValue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OutputValue", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "OutputValue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Block] SET [BlockId] = @BlockId, [BlockchainFileId] = @BlockchainFileId, [BlockVersion] = @BlockVersion, [BlockHash] = @BlockHash, [PreviousBlockHash] = @PreviousBlockHash, [BlockTimestamp] = @BlockTimestamp, [TransparentSpent] = @TransparentSpent, [ShieldedIn] = @ShieldedIn, [ShieldedOut] = @ShieldedOut, [ShieldedDiff] = @ShieldedDiff, [SumShielded] = @SumShielded, [BlockReward] = @BlockReward, [TotalSupply] = @TotalSupply WHERE (([BlockId] = @Original_BlockId) AND ([BlockchainFileId] = @Original_BlockchainFileId) AND ([BlockVersion] = @Original_BlockVersion) AND ([BlockHash] = @Original_BlockHash) AND ([PreviousBlockHash] = @Original_PreviousBlockHash) AND ([BlockTimestamp] = @Original_BlockTimestamp) AND ([TransparentSpent] = @Original_TransparentSpent) AND ([ShieldedIn] = @Original_ShieldedIn) AND ([ShieldedOut] = @Original_ShieldedOut) AND ([ShieldedDiff] = @Original_ShieldedDiff) AND ([SumShielded] = @Original_SumShielded) AND ([BlockReward] = @Original_BlockReward) AND ([TotalSupply] = @Original_TotalSupply));
-SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, BlockTimestamp, TransparentSpent, ShieldedIn, ShieldedOut, ShieldedDiff, SumShielded, BlockReward, TotalSupply FROM Block WHERE (BlockId = @BlockId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [JoinSplit] SET [JoinSplitId] = @JoinSplitId, [BitcoinTransactionId] = @BitcoinTransactionId, [JoinSplitIndex] = @JoinSplitIndex, [InputValue] = @InputValue, [OutputValue] = @OutputValue WHERE (([JoinSplitId] = @Original_JoinSplitId) AND ([BitcoinTransactionId] = @Original_BitcoinTransactionId) AND ([JoinSplitIndex] = @Original_JoinSplitIndex) AND ([InputValue] = @Original_InputValue) AND ([OutputValue] = @Original_OutputValue));
+SELECT JoinSplitId, BitcoinTransactionId, JoinSplitIndex, InputValue, OutputValue FROM JoinSplit WHERE (JoinSplitId = @JoinSplitId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BlockId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BlockchainFileId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockchainFileId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BlockVersion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockVersion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BlockHash", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockHash", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PreviousBlockHash", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreviousBlockHash", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BlockTimestamp", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockTimestamp", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TransparentSpent", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "TransparentSpent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShieldedIn", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedIn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShieldedOut", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedOut", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShieldedDiff", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedDiff", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SumShielded", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "SumShielded", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BlockReward", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "BlockReward", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalSupply", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "TotalSupply", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BlockId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BlockchainFileId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockchainFileId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BlockVersion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockVersion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BlockHash", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockHash", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PreviousBlockHash", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreviousBlockHash", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BlockTimestamp", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockTimestamp", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TransparentSpent", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "TransparentSpent", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ShieldedIn", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedIn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ShieldedOut", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedOut", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ShieldedDiff", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedDiff", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SumShielded", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "SumShielded", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BlockReward", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "BlockReward", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalSupply", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "TotalSupply", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JoinSplitId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JoinSplitId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BitcoinTransactionId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BitcoinTransactionId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JoinSplitIndex", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JoinSplitIndex", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@InputValue", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "InputValue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OutputValue", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "OutputValue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_JoinSplitId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JoinSplitId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BitcoinTransactionId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BitcoinTransactionId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_JoinSplitIndex", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JoinSplitIndex", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_InputValue", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "InputValue", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OutputValue", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "OutputValue", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1122,7 +874,7 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Block.*\r\nFROM            Block";
+            this._commandCollection[0].CommandText = "SELECT        JoinSplit.*\r\nFROM            JoinSplit";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1130,7 +882,7 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BlockDataSet.BlockDataTable dataTable) {
+        public virtual int Fill(JoinSplitDataSet.JoinSplitDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1143,9 +895,9 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BlockDataSet.BlockDataTable GetData() {
+        public virtual JoinSplitDataSet.JoinSplitDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BlockDataSet.BlockDataTable dataTable = new BlockDataSet.BlockDataTable();
+            JoinSplitDataSet.JoinSplitDataTable dataTable = new JoinSplitDataSet.JoinSplitDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1153,15 +905,15 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BlockDataSet.BlockDataTable dataTable) {
+        public virtual int Update(JoinSplitDataSet.JoinSplitDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BlockDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Block");
+        public virtual int Update(JoinSplitDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "JoinSplit");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1183,30 +935,12 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_BlockId, int Original_BlockchainFileId, int Original_BlockVersion, byte[] Original_BlockHash, byte[] Original_PreviousBlockHash, System.DateTime Original_BlockTimestamp, decimal Original_TransparentSpent, decimal Original_ShieldedIn, decimal Original_ShieldedOut, decimal Original_ShieldedDiff, decimal Original_SumShielded, decimal Original_BlockReward, decimal Original_TotalSupply) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_BlockId));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_BlockchainFileId));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_BlockVersion));
-            if ((Original_BlockHash == null)) {
-                throw new global::System.ArgumentNullException("Original_BlockHash");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((byte[])(Original_BlockHash));
-            }
-            if ((Original_PreviousBlockHash == null)) {
-                throw new global::System.ArgumentNullException("Original_PreviousBlockHash");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((byte[])(Original_PreviousBlockHash));
-            }
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_BlockTimestamp));
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((decimal)(Original_TransparentSpent));
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((decimal)(Original_ShieldedIn));
-            this.Adapter.DeleteCommand.Parameters[8].Value = ((decimal)(Original_ShieldedOut));
-            this.Adapter.DeleteCommand.Parameters[9].Value = ((decimal)(Original_ShieldedDiff));
-            this.Adapter.DeleteCommand.Parameters[10].Value = ((decimal)(Original_SumShielded));
-            this.Adapter.DeleteCommand.Parameters[11].Value = ((decimal)(Original_BlockReward));
-            this.Adapter.DeleteCommand.Parameters[12].Value = ((decimal)(Original_TotalSupply));
+        public virtual int Delete(long Original_JoinSplitId, long Original_BitcoinTransactionId, int Original_JoinSplitIndex, decimal Original_InputValue, decimal Original_OutputValue) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_JoinSplitId));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((long)(Original_BitcoinTransactionId));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_JoinSplitIndex));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((decimal)(Original_InputValue));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_OutputValue));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1227,30 +961,12 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long BlockId, int BlockchainFileId, int BlockVersion, byte[] BlockHash, byte[] PreviousBlockHash, System.DateTime BlockTimestamp, decimal TransparentSpent, decimal ShieldedIn, decimal ShieldedOut, decimal ShieldedDiff, decimal SumShielded, decimal BlockReward, decimal TotalSupply) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((long)(BlockId));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(BlockchainFileId));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(BlockVersion));
-            if ((BlockHash == null)) {
-                throw new global::System.ArgumentNullException("BlockHash");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((byte[])(BlockHash));
-            }
-            if ((PreviousBlockHash == null)) {
-                throw new global::System.ArgumentNullException("PreviousBlockHash");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((byte[])(PreviousBlockHash));
-            }
-            this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(BlockTimestamp));
-            this.Adapter.InsertCommand.Parameters[6].Value = ((decimal)(TransparentSpent));
-            this.Adapter.InsertCommand.Parameters[7].Value = ((decimal)(ShieldedIn));
-            this.Adapter.InsertCommand.Parameters[8].Value = ((decimal)(ShieldedOut));
-            this.Adapter.InsertCommand.Parameters[9].Value = ((decimal)(ShieldedDiff));
-            this.Adapter.InsertCommand.Parameters[10].Value = ((decimal)(SumShielded));
-            this.Adapter.InsertCommand.Parameters[11].Value = ((decimal)(BlockReward));
-            this.Adapter.InsertCommand.Parameters[12].Value = ((decimal)(TotalSupply));
+        public virtual int Insert(long JoinSplitId, long BitcoinTransactionId, int JoinSplitIndex, decimal InputValue, decimal OutputValue) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((long)(JoinSplitId));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((long)(BitcoinTransactionId));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(JoinSplitIndex));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(InputValue));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(OutputValue));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1271,79 +987,17 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    long BlockId, 
-                    int BlockchainFileId, 
-                    int BlockVersion, 
-                    byte[] BlockHash, 
-                    byte[] PreviousBlockHash, 
-                    System.DateTime BlockTimestamp, 
-                    decimal TransparentSpent, 
-                    decimal ShieldedIn, 
-                    decimal ShieldedOut, 
-                    decimal ShieldedDiff, 
-                    decimal SumShielded, 
-                    decimal BlockReward, 
-                    decimal TotalSupply, 
-                    long Original_BlockId, 
-                    int Original_BlockchainFileId, 
-                    int Original_BlockVersion, 
-                    byte[] Original_BlockHash, 
-                    byte[] Original_PreviousBlockHash, 
-                    System.DateTime Original_BlockTimestamp, 
-                    decimal Original_TransparentSpent, 
-                    decimal Original_ShieldedIn, 
-                    decimal Original_ShieldedOut, 
-                    decimal Original_ShieldedDiff, 
-                    decimal Original_SumShielded, 
-                    decimal Original_BlockReward, 
-                    decimal Original_TotalSupply) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(BlockId));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(BlockchainFileId));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(BlockVersion));
-            if ((BlockHash == null)) {
-                throw new global::System.ArgumentNullException("BlockHash");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((byte[])(BlockHash));
-            }
-            if ((PreviousBlockHash == null)) {
-                throw new global::System.ArgumentNullException("PreviousBlockHash");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((byte[])(PreviousBlockHash));
-            }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(BlockTimestamp));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(TransparentSpent));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(ShieldedIn));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(ShieldedOut));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(ShieldedDiff));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(SumShielded));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(BlockReward));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(TotalSupply));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((long)(Original_BlockId));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_BlockchainFileId));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_BlockVersion));
-            if ((Original_BlockHash == null)) {
-                throw new global::System.ArgumentNullException("Original_BlockHash");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((byte[])(Original_BlockHash));
-            }
-            if ((Original_PreviousBlockHash == null)) {
-                throw new global::System.ArgumentNullException("Original_PreviousBlockHash");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((byte[])(Original_PreviousBlockHash));
-            }
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_BlockTimestamp));
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((decimal)(Original_TransparentSpent));
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((decimal)(Original_ShieldedIn));
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((decimal)(Original_ShieldedOut));
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((decimal)(Original_ShieldedDiff));
-            this.Adapter.UpdateCommand.Parameters[23].Value = ((decimal)(Original_SumShielded));
-            this.Adapter.UpdateCommand.Parameters[24].Value = ((decimal)(Original_BlockReward));
-            this.Adapter.UpdateCommand.Parameters[25].Value = ((decimal)(Original_TotalSupply));
+        public virtual int Update(long JoinSplitId, long BitcoinTransactionId, int JoinSplitIndex, decimal InputValue, decimal OutputValue, long Original_JoinSplitId, long Original_BitcoinTransactionId, int Original_JoinSplitIndex, decimal Original_InputValue, decimal Original_OutputValue) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(JoinSplitId));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((long)(BitcoinTransactionId));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(JoinSplitIndex));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(InputValue));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(OutputValue));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Original_JoinSplitId));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Original_BitcoinTransactionId));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_JoinSplitIndex));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(Original_InputValue));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(Original_OutputValue));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1364,33 +1018,8 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    int BlockchainFileId, 
-                    int BlockVersion, 
-                    byte[] BlockHash, 
-                    byte[] PreviousBlockHash, 
-                    System.DateTime BlockTimestamp, 
-                    decimal TransparentSpent, 
-                    decimal ShieldedIn, 
-                    decimal ShieldedOut, 
-                    decimal ShieldedDiff, 
-                    decimal SumShielded, 
-                    decimal BlockReward, 
-                    decimal TotalSupply, 
-                    long Original_BlockId, 
-                    int Original_BlockchainFileId, 
-                    int Original_BlockVersion, 
-                    byte[] Original_BlockHash, 
-                    byte[] Original_PreviousBlockHash, 
-                    System.DateTime Original_BlockTimestamp, 
-                    decimal Original_TransparentSpent, 
-                    decimal Original_ShieldedIn, 
-                    decimal Original_ShieldedOut, 
-                    decimal Original_ShieldedDiff, 
-                    decimal Original_SumShielded, 
-                    decimal Original_BlockReward, 
-                    decimal Original_TotalSupply) {
-            return this.Update(Original_BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, BlockTimestamp, TransparentSpent, ShieldedIn, ShieldedOut, ShieldedDiff, SumShielded, BlockReward, TotalSupply, Original_BlockId, Original_BlockchainFileId, Original_BlockVersion, Original_BlockHash, Original_PreviousBlockHash, Original_BlockTimestamp, Original_TransparentSpent, Original_ShieldedIn, Original_ShieldedOut, Original_ShieldedDiff, Original_SumShielded, Original_BlockReward, Original_TotalSupply);
+        public virtual int Update(long BitcoinTransactionId, int JoinSplitIndex, decimal InputValue, decimal OutputValue, long Original_JoinSplitId, long Original_BitcoinTransactionId, int Original_JoinSplitIndex, decimal Original_InputValue, decimal Original_OutputValue) {
+            return this.Update(Original_JoinSplitId, BitcoinTransactionId, JoinSplitIndex, InputValue, OutputValue, Original_JoinSplitId, Original_BitcoinTransactionId, Original_JoinSplitIndex, Original_InputValue, Original_OutputValue);
         }
     }
     
@@ -1406,7 +1035,7 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
         
         private UpdateOrderOption _updateOrder;
         
-        private BlockTableAdapter _blockTableAdapter;
+        private JoinSplitTableAdapter _joinSplitTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1428,12 +1057,12 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public BlockTableAdapter BlockTableAdapter {
+        public JoinSplitTableAdapter JoinSplitTableAdapter {
             get {
-                return this._blockTableAdapter;
+                return this._joinSplitTableAdapter;
             }
             set {
-                this._blockTableAdapter = value;
+                this._joinSplitTableAdapter = value;
             }
         }
         
@@ -1456,9 +1085,9 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._blockTableAdapter != null) 
-                            && (this._blockTableAdapter.Connection != null))) {
-                    return this._blockTableAdapter.Connection;
+                if (((this._joinSplitTableAdapter != null) 
+                            && (this._joinSplitTableAdapter.Connection != null))) {
+                    return this._joinSplitTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1473,7 +1102,7 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._blockTableAdapter != null)) {
+                if ((this._joinSplitTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1485,14 +1114,14 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(BlockDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(JoinSplitDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._blockTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Block.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._joinSplitTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.JoinSplit.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._blockTableAdapter.Update(updatedRows));
+                    result = (result + this._joinSplitTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1504,13 +1133,13 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(BlockDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(JoinSplitDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._blockTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Block.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._joinSplitTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.JoinSplit.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._blockTableAdapter.Update(addedRows));
+                    result = (result + this._joinSplitTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1522,13 +1151,13 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(BlockDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(JoinSplitDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._blockTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Block.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._joinSplitTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.JoinSplit.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._blockTableAdapter.Update(deletedRows));
+                    result = (result + this._joinSplitTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1564,15 +1193,15 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(BlockDataSet dataSet) {
+        public virtual int UpdateAll(JoinSplitDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._blockTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._blockTableAdapter.Connection) == false))) {
+            if (((this._joinSplitTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._joinSplitTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1608,13 +1237,13 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._blockTableAdapter != null)) {
-                    revertConnections.Add(this._blockTableAdapter, this._blockTableAdapter.Connection);
-                    this._blockTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._blockTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._blockTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._blockTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._blockTableAdapter.Adapter);
+                if ((this._joinSplitTableAdapter != null)) {
+                    revertConnections.Add(this._joinSplitTableAdapter, this._joinSplitTableAdapter.Connection);
+                    this._joinSplitTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._joinSplitTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._joinSplitTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._joinSplitTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._joinSplitTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1675,9 +1304,9 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._blockTableAdapter != null)) {
-                    this._blockTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._blockTableAdapter]));
-                    this._blockTableAdapter.Transaction = null;
+                if ((this._joinSplitTableAdapter != null)) {
+                    this._joinSplitTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._joinSplitTableAdapter]));
+                    this._joinSplitTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
