@@ -134,6 +134,7 @@ CREATE TABLE TransactionOutput (
 );
 
 CREATE INDEX IX_TransactionOutput_BitcoinTransactionId ON TransactionOutput(BitcoinTransactionId)
+CREATE INDEX IX_TransactionOutput_TransactionOutputId ON TransactionOutput(TransactionOutputId)
 CREATE INDEX IX_TransactionOutput_OutputAddress ON TransactionOutput(OutputAddress)
 
 -- ==========================================================================
