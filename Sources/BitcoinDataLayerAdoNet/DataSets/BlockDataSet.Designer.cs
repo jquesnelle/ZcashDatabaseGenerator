@@ -299,11 +299,7 @@ namespace BitcoinDataLayerAdoNet.DataSets {
             
             private global::System.Data.DataColumn columnShieldedDiff;
             
-            private global::System.Data.DataColumn columnSumShielded;
-            
             private global::System.Data.DataColumn columnBlockReward;
-            
-            private global::System.Data.DataColumn columnTotalSupply;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -420,25 +416,9 @@ namespace BitcoinDataLayerAdoNet.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SumShieldedColumn {
-                get {
-                    return this.columnSumShielded;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn BlockRewardColumn {
                 get {
                     return this.columnBlockReward;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn TotalSupplyColumn {
-                get {
-                    return this.columnTotalSupply;
                 }
             }
             
@@ -479,7 +459,7 @@ namespace BitcoinDataLayerAdoNet.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public BlockRow AddBlockRow(long BlockId, int BlockchainFileId, int BlockVersion, byte[] BlockHash, byte[] PreviousBlockHash, System.DateTime BlockTimestamp, decimal TransparentSpent, decimal ShieldedIn, decimal ShieldedOut, decimal ShieldedDiff, decimal SumShielded, decimal BlockReward, decimal TotalSupply) {
+            public BlockRow AddBlockRow(long BlockId, int BlockchainFileId, int BlockVersion, byte[] BlockHash, byte[] PreviousBlockHash, System.DateTime BlockTimestamp, decimal TransparentSpent, decimal ShieldedIn, decimal ShieldedOut, decimal ShieldedDiff, decimal BlockReward) {
                 BlockRow rowBlockRow = ((BlockRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         BlockId,
@@ -492,9 +472,7 @@ namespace BitcoinDataLayerAdoNet.DataSets {
                         ShieldedIn,
                         ShieldedOut,
                         ShieldedDiff,
-                        SumShielded,
-                        BlockReward,
-                        TotalSupply};
+                        BlockReward};
                 rowBlockRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBlockRow);
                 return rowBlockRow;
@@ -534,9 +512,7 @@ namespace BitcoinDataLayerAdoNet.DataSets {
                 this.columnShieldedIn = base.Columns["ShieldedIn"];
                 this.columnShieldedOut = base.Columns["ShieldedOut"];
                 this.columnShieldedDiff = base.Columns["ShieldedDiff"];
-                this.columnSumShielded = base.Columns["SumShielded"];
                 this.columnBlockReward = base.Columns["BlockReward"];
-                this.columnTotalSupply = base.Columns["TotalSupply"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -562,12 +538,8 @@ namespace BitcoinDataLayerAdoNet.DataSets {
                 base.Columns.Add(this.columnShieldedOut);
                 this.columnShieldedDiff = new global::System.Data.DataColumn("ShieldedDiff", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnShieldedDiff);
-                this.columnSumShielded = new global::System.Data.DataColumn("SumShielded", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSumShielded);
                 this.columnBlockReward = new global::System.Data.DataColumn("BlockReward", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBlockReward);
-                this.columnTotalSupply = new global::System.Data.DataColumn("TotalSupply", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotalSupply);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnBlockId}, true));
                 this.columnBlockId.AllowDBNull = false;
@@ -581,9 +553,7 @@ namespace BitcoinDataLayerAdoNet.DataSets {
                 this.columnShieldedIn.AllowDBNull = false;
                 this.columnShieldedOut.AllowDBNull = false;
                 this.columnShieldedDiff.AllowDBNull = false;
-                this.columnSumShielded.AllowDBNull = false;
                 this.columnBlockReward.AllowDBNull = false;
-                this.columnTotalSupply.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -836,34 +806,12 @@ namespace BitcoinDataLayerAdoNet.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal SumShielded {
-                get {
-                    return ((decimal)(this[this.tableBlock.SumShieldedColumn]));
-                }
-                set {
-                    this[this.tableBlock.SumShieldedColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public decimal BlockReward {
                 get {
                     return ((decimal)(this[this.tableBlock.BlockRewardColumn]));
                 }
                 set {
                     this[this.tableBlock.BlockRewardColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal TotalSupply {
-                get {
-                    return ((decimal)(this[this.tableBlock.TotalSupplyColumn]));
-                }
-                set {
-                    this[this.tableBlock.TotalSupplyColumn] = value;
                 }
             }
         }
@@ -1037,13 +985,11 @@ namespace BitcoinDataLayerAdoNet.DataSets.BlockDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("ShieldedIn", "ShieldedIn");
             tableMapping.ColumnMappings.Add("ShieldedOut", "ShieldedOut");
             tableMapping.ColumnMappings.Add("ShieldedDiff", "ShieldedDiff");
-            tableMapping.ColumnMappings.Add("SumShielded", "SumShielded");
             tableMapping.ColumnMappings.Add("BlockReward", "BlockReward");
-            tableMapping.ColumnMappings.Add("TotalSupply", "TotalSupply");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Block] WHERE (([BlockId] = @Original_BlockId) AND ([BlockchainFileId] = @Original_BlockchainFileId) AND ([BlockVersion] = @Original_BlockVersion) AND ([BlockHash] = @Original_BlockHash) AND ([PreviousBlockHash] = @Original_PreviousBlockHash) AND ([BlockTimestamp] = @Original_BlockTimestamp) AND ([TransparentSpent] = @Original_TransparentSpent) AND ([ShieldedIn] = @Original_ShieldedIn) AND ([ShieldedOut] = @Original_ShieldedOut) AND ([ShieldedDiff] = @Original_ShieldedDiff) AND ([SumShielded] = @Original_SumShielded) AND ([BlockReward] = @Original_BlockReward) AND ([TotalSupply] = @Original_TotalSupply))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Block] WHERE (([BlockId] = @Original_BlockId) AND ([BlockchainFileId] = @Original_BlockchainFileId) AND ([BlockVersion] = @Original_BlockVersion) AND ([BlockHash] = @Original_BlockHash) AND ([PreviousBlockHash] = @Original_PreviousBlockHash) AND ([BlockTimestamp] = @Original_BlockTimestamp) AND ([TransparentSpent] = @Original_TransparentSpent) AND ([ShieldedIn] = @Original_ShieldedIn) AND ([ShieldedOut] = @Original_ShieldedOut) AND ([ShieldedDiff] = @Original_ShieldedDiff) AND ([BlockReward] = @Original_BlockReward))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BlockId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BlockchainFileId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockchainFileId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1055,13 +1001,11 @@ namespace BitcoinDataLayerAdoNet.DataSets.BlockDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ShieldedIn", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedIn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ShieldedOut", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedOut", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ShieldedDiff", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedDiff", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SumShielded", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "SumShielded", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BlockReward", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "BlockReward", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalSupply", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "TotalSupply", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Block] ([BlockId], [BlockchainFileId], [BlockVersion], [BlockHash], [PreviousBlockHash], [BlockTimestamp], [TransparentSpent], [ShieldedIn], [ShieldedOut], [ShieldedDiff], [SumShielded], [BlockReward], [TotalSupply]) VALUES (@BlockId, @BlockchainFileId, @BlockVersion, @BlockHash, @PreviousBlockHash, @BlockTimestamp, @TransparentSpent, @ShieldedIn, @ShieldedOut, @ShieldedDiff, @SumShielded, @BlockReward, @TotalSupply);
-SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, BlockTimestamp, TransparentSpent, ShieldedIn, ShieldedOut, ShieldedDiff, SumShielded, BlockReward, TotalSupply FROM Block WHERE (BlockId = @BlockId)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Block] ([BlockId], [BlockchainFileId], [BlockVersion], [BlockHash], [PreviousBlockHash], [BlockTimestamp], [TransparentSpent], [ShieldedIn], [ShieldedOut], [ShieldedDiff], [BlockReward]) VALUES (@BlockId, @BlockchainFileId, @BlockVersion, @BlockHash, @PreviousBlockHash, @BlockTimestamp, @TransparentSpent, @ShieldedIn, @ShieldedOut, @ShieldedDiff, @BlockReward);
+SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, BlockTimestamp, TransparentSpent, ShieldedIn, ShieldedOut, ShieldedDiff, BlockReward FROM Block WHERE (BlockId = @BlockId)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BlockId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BlockchainFileId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockchainFileId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1073,13 +1017,11 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShieldedIn", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedIn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShieldedOut", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedOut", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShieldedDiff", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedDiff", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SumShielded", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "SumShielded", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BlockReward", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "BlockReward", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalSupply", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "TotalSupply", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Block] SET [BlockId] = @BlockId, [BlockchainFileId] = @BlockchainFileId, [BlockVersion] = @BlockVersion, [BlockHash] = @BlockHash, [PreviousBlockHash] = @PreviousBlockHash, [BlockTimestamp] = @BlockTimestamp, [TransparentSpent] = @TransparentSpent, [ShieldedIn] = @ShieldedIn, [ShieldedOut] = @ShieldedOut, [ShieldedDiff] = @ShieldedDiff, [SumShielded] = @SumShielded, [BlockReward] = @BlockReward, [TotalSupply] = @TotalSupply WHERE (([BlockId] = @Original_BlockId) AND ([BlockchainFileId] = @Original_BlockchainFileId) AND ([BlockVersion] = @Original_BlockVersion) AND ([BlockHash] = @Original_BlockHash) AND ([PreviousBlockHash] = @Original_PreviousBlockHash) AND ([BlockTimestamp] = @Original_BlockTimestamp) AND ([TransparentSpent] = @Original_TransparentSpent) AND ([ShieldedIn] = @Original_ShieldedIn) AND ([ShieldedOut] = @Original_ShieldedOut) AND ([ShieldedDiff] = @Original_ShieldedDiff) AND ([SumShielded] = @Original_SumShielded) AND ([BlockReward] = @Original_BlockReward) AND ([TotalSupply] = @Original_TotalSupply));
-SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, BlockTimestamp, TransparentSpent, ShieldedIn, ShieldedOut, ShieldedDiff, SumShielded, BlockReward, TotalSupply FROM Block WHERE (BlockId = @BlockId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Block] SET [BlockId] = @BlockId, [BlockchainFileId] = @BlockchainFileId, [BlockVersion] = @BlockVersion, [BlockHash] = @BlockHash, [PreviousBlockHash] = @PreviousBlockHash, [BlockTimestamp] = @BlockTimestamp, [TransparentSpent] = @TransparentSpent, [ShieldedIn] = @ShieldedIn, [ShieldedOut] = @ShieldedOut, [ShieldedDiff] = @ShieldedDiff, [BlockReward] = @BlockReward WHERE (([BlockId] = @Original_BlockId) AND ([BlockchainFileId] = @Original_BlockchainFileId) AND ([BlockVersion] = @Original_BlockVersion) AND ([BlockHash] = @Original_BlockHash) AND ([PreviousBlockHash] = @Original_PreviousBlockHash) AND ([BlockTimestamp] = @Original_BlockTimestamp) AND ([TransparentSpent] = @Original_TransparentSpent) AND ([ShieldedIn] = @Original_ShieldedIn) AND ([ShieldedOut] = @Original_ShieldedOut) AND ([ShieldedDiff] = @Original_ShieldedDiff) AND ([BlockReward] = @Original_BlockReward));
+SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, BlockTimestamp, TransparentSpent, ShieldedIn, ShieldedOut, ShieldedDiff, BlockReward FROM Block WHERE (BlockId = @BlockId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BlockId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BlockchainFileId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockchainFileId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1091,9 +1033,7 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShieldedIn", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedIn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShieldedOut", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedOut", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShieldedDiff", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedDiff", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SumShielded", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "SumShielded", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BlockReward", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "BlockReward", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalSupply", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "TotalSupply", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BlockId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BlockchainFileId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockchainFileId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BlockVersion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BlockVersion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1104,16 +1044,14 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ShieldedIn", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedIn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ShieldedOut", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedOut", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ShieldedDiff", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "ShieldedDiff", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SumShielded", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "SumShielded", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BlockReward", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "BlockReward", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalSupply", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 20, 8, "TotalSupply", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BitcoinDataLayerAdoNet.Properties.Settings.Default.BitcoinDatabaseConnectionString1;
+            this._connection.ConnectionString = global::BitcoinDataLayerAdoNet.Properties.Settings.Default.zcash_latestConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1183,7 +1121,7 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_BlockId, int Original_BlockchainFileId, int Original_BlockVersion, byte[] Original_BlockHash, byte[] Original_PreviousBlockHash, System.DateTime Original_BlockTimestamp, decimal Original_TransparentSpent, decimal Original_ShieldedIn, decimal Original_ShieldedOut, decimal Original_ShieldedDiff, decimal Original_SumShielded, decimal Original_BlockReward, decimal Original_TotalSupply) {
+        public virtual int Delete(long Original_BlockId, int Original_BlockchainFileId, int Original_BlockVersion, byte[] Original_BlockHash, byte[] Original_PreviousBlockHash, System.DateTime Original_BlockTimestamp, decimal Original_TransparentSpent, decimal Original_ShieldedIn, decimal Original_ShieldedOut, decimal Original_ShieldedDiff, decimal Original_BlockReward) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_BlockId));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_BlockchainFileId));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_BlockVersion));
@@ -1204,9 +1142,7 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
             this.Adapter.DeleteCommand.Parameters[7].Value = ((decimal)(Original_ShieldedIn));
             this.Adapter.DeleteCommand.Parameters[8].Value = ((decimal)(Original_ShieldedOut));
             this.Adapter.DeleteCommand.Parameters[9].Value = ((decimal)(Original_ShieldedDiff));
-            this.Adapter.DeleteCommand.Parameters[10].Value = ((decimal)(Original_SumShielded));
-            this.Adapter.DeleteCommand.Parameters[11].Value = ((decimal)(Original_BlockReward));
-            this.Adapter.DeleteCommand.Parameters[12].Value = ((decimal)(Original_TotalSupply));
+            this.Adapter.DeleteCommand.Parameters[10].Value = ((decimal)(Original_BlockReward));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1227,7 +1163,7 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long BlockId, int BlockchainFileId, int BlockVersion, byte[] BlockHash, byte[] PreviousBlockHash, System.DateTime BlockTimestamp, decimal TransparentSpent, decimal ShieldedIn, decimal ShieldedOut, decimal ShieldedDiff, decimal SumShielded, decimal BlockReward, decimal TotalSupply) {
+        public virtual int Insert(long BlockId, int BlockchainFileId, int BlockVersion, byte[] BlockHash, byte[] PreviousBlockHash, System.DateTime BlockTimestamp, decimal TransparentSpent, decimal ShieldedIn, decimal ShieldedOut, decimal ShieldedDiff, decimal BlockReward) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((long)(BlockId));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(BlockchainFileId));
             this.Adapter.InsertCommand.Parameters[2].Value = ((int)(BlockVersion));
@@ -1248,9 +1184,7 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
             this.Adapter.InsertCommand.Parameters[7].Value = ((decimal)(ShieldedIn));
             this.Adapter.InsertCommand.Parameters[8].Value = ((decimal)(ShieldedOut));
             this.Adapter.InsertCommand.Parameters[9].Value = ((decimal)(ShieldedDiff));
-            this.Adapter.InsertCommand.Parameters[10].Value = ((decimal)(SumShielded));
-            this.Adapter.InsertCommand.Parameters[11].Value = ((decimal)(BlockReward));
-            this.Adapter.InsertCommand.Parameters[12].Value = ((decimal)(TotalSupply));
+            this.Adapter.InsertCommand.Parameters[10].Value = ((decimal)(BlockReward));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1282,9 +1216,7 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
                     decimal ShieldedIn, 
                     decimal ShieldedOut, 
                     decimal ShieldedDiff, 
-                    decimal SumShielded, 
                     decimal BlockReward, 
-                    decimal TotalSupply, 
                     long Original_BlockId, 
                     int Original_BlockchainFileId, 
                     int Original_BlockVersion, 
@@ -1295,9 +1227,7 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
                     decimal Original_ShieldedIn, 
                     decimal Original_ShieldedOut, 
                     decimal Original_ShieldedDiff, 
-                    decimal Original_SumShielded, 
-                    decimal Original_BlockReward, 
-                    decimal Original_TotalSupply) {
+                    decimal Original_BlockReward) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(BlockId));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(BlockchainFileId));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(BlockVersion));
@@ -1318,32 +1248,28 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
             this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(ShieldedIn));
             this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(ShieldedOut));
             this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(ShieldedDiff));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(SumShielded));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(BlockReward));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(TotalSupply));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((long)(Original_BlockId));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_BlockchainFileId));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_BlockVersion));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(BlockReward));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((long)(Original_BlockId));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_BlockchainFileId));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_BlockVersion));
             if ((Original_BlockHash == null)) {
                 throw new global::System.ArgumentNullException("Original_BlockHash");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((byte[])(Original_BlockHash));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((byte[])(Original_BlockHash));
             }
             if ((Original_PreviousBlockHash == null)) {
                 throw new global::System.ArgumentNullException("Original_PreviousBlockHash");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((byte[])(Original_PreviousBlockHash));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((byte[])(Original_PreviousBlockHash));
             }
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_BlockTimestamp));
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((decimal)(Original_TransparentSpent));
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((decimal)(Original_ShieldedIn));
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((decimal)(Original_ShieldedOut));
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((decimal)(Original_ShieldedDiff));
-            this.Adapter.UpdateCommand.Parameters[23].Value = ((decimal)(Original_SumShielded));
-            this.Adapter.UpdateCommand.Parameters[24].Value = ((decimal)(Original_BlockReward));
-            this.Adapter.UpdateCommand.Parameters[25].Value = ((decimal)(Original_TotalSupply));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_BlockTimestamp));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((decimal)(Original_TransparentSpent));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((decimal)(Original_ShieldedIn));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((decimal)(Original_ShieldedOut));
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((decimal)(Original_ShieldedDiff));
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((decimal)(Original_BlockReward));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1374,9 +1300,7 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
                     decimal ShieldedIn, 
                     decimal ShieldedOut, 
                     decimal ShieldedDiff, 
-                    decimal SumShielded, 
                     decimal BlockReward, 
-                    decimal TotalSupply, 
                     long Original_BlockId, 
                     int Original_BlockchainFileId, 
                     int Original_BlockVersion, 
@@ -1387,10 +1311,8 @@ SELECT BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, Bl
                     decimal Original_ShieldedIn, 
                     decimal Original_ShieldedOut, 
                     decimal Original_ShieldedDiff, 
-                    decimal Original_SumShielded, 
-                    decimal Original_BlockReward, 
-                    decimal Original_TotalSupply) {
-            return this.Update(Original_BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, BlockTimestamp, TransparentSpent, ShieldedIn, ShieldedOut, ShieldedDiff, SumShielded, BlockReward, TotalSupply, Original_BlockId, Original_BlockchainFileId, Original_BlockVersion, Original_BlockHash, Original_PreviousBlockHash, Original_BlockTimestamp, Original_TransparentSpent, Original_ShieldedIn, Original_ShieldedOut, Original_ShieldedDiff, Original_SumShielded, Original_BlockReward, Original_TotalSupply);
+                    decimal Original_BlockReward) {
+            return this.Update(Original_BlockId, BlockchainFileId, BlockVersion, BlockHash, PreviousBlockHash, BlockTimestamp, TransparentSpent, ShieldedIn, ShieldedOut, ShieldedDiff, BlockReward, Original_BlockId, Original_BlockchainFileId, Original_BlockVersion, Original_BlockHash, Original_PreviousBlockHash, Original_BlockTimestamp, Original_TransparentSpent, Original_ShieldedIn, Original_ShieldedOut, Original_ShieldedDiff, Original_BlockReward);
         }
     }
     

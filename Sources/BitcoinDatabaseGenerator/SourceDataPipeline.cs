@@ -82,9 +82,7 @@ namespace BitcoinDatabaseGenerator
                     (decimal)parserBlock.ShieldedIn / DatabaseGenerator.BtcToSatoshi,
                     (decimal)parserBlock.ShieldedOut / DatabaseGenerator.BtcToSatoshi,
                     (decimal)parserBlock.ShieldedDiff / DatabaseGenerator.BtcToSatoshi,
-                    (decimal)parserBlock.SumShielded / DatabaseGenerator.BtcToSatoshi,
-                    (decimal)parserBlock.BlockReward / DatabaseGenerator.BtcToSatoshi,
-                    (decimal)parserBlock.TotalSupply / DatabaseGenerator.BtcToSatoshi);
+                    (decimal)parserBlock.BlockReward / DatabaseGenerator.BtcToSatoshi);
 
                 if (this.MakeDataTableAvailableIfLarge(this.blockDataSet.Block))
                 {

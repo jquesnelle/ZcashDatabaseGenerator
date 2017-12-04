@@ -46,9 +46,7 @@ CREATE TABLE Block (
 	ShieldedIn 						NUMERIC(20,8)					NOT NULL,
 	ShieldedOut 					NUMERIC(20,8)					NOT NULL,
 	ShieldedDiff 					NUMERIC(20,8)					NOT NULL,
-	SumShielded                     NUMERIC(20,8)					NOT NULL,
-	BlockReward                     NUMERIC(20,8)					NOT NULL,
-	TotalSupply                     NUMERIC(20,8)					NOT NULL
+	BlockReward                     NUMERIC(20,8)					NOT NULL
 );
 
 
